@@ -1,1 +1,4 @@
-node_modules
+node_modulesbuild/
+node_modules/
+build
+build/
