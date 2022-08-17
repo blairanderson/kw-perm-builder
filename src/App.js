@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div className="">
       <div className="App">
-        <h1>{document.title}</h1>
+        <h1><a href={'/'}>{document.title}</a></h1>
       </div>
 
       <div className="container-fluid">
