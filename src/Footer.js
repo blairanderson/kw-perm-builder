@@ -25,7 +25,7 @@ export default function Footer() {
     }, []);
 
     return (
-        <div className="container mt-5">
+        <div className="mt-5">
             <footer className="py-3 my-4">
                 {isLoading ? (
                     "loading"
