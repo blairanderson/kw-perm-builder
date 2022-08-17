@@ -4,10 +4,10 @@ import "./styles.css";
 
 export default function App() {
   const [modifiers, update] = React.useState([
-    ["cast iron"],
-    ["floor"],
-    ["vent", "register"],
-    ["4x10", "4x12"]
+    ["tesla"],
+    ["electric"],
+    ["car", "automobile"],
+    ["red", "black"]
   ]);
 
   const combos = Combos(modifiers);
@@ -28,7 +28,7 @@ export default function App() {
         <h1><a href={'/'}>{document.title}</a></h1>
       </div>
 
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-sm-5">
             <p className="lead">Keyword List:</p>
@@ -38,6 +38,13 @@ export default function App() {
           <div className="col">
             <p className="lead">Modifiers:</p>
             <InputForm modifiers={modifiers} update={update} />
+            <p>
+              <strong>Instructions:</strong> <br/>
+              Every Modifier ROW is another permutation that gets created onto the left.
+              <br/>
+              You can have "Either/OR" by pressing the grey plus button (this is useful for synonyms).
+            </p>
+
           </div>
         </div>
       </div>

@@ -8,10 +8,7 @@ export default function Footer() {
     );
 
     const getTools = () => {
-        fetch("https://app.shipmentbot.com/tools.json", {
-            "Origin": "https://app.shipmentbot.com",
-            "mode": "no-cors"
-        }).then((response) => {
+        fetch("https://www.shipmentbot.com/tools.json").then((response) => {
             return response.json();
         }).then((json) => {
             const {tools, anchor} = json;
@@ -33,7 +30,7 @@ export default function Footer() {
                 {isLoading ? (
                     "loading"
                 ) : (
-                    <ul className="nav justify-content-center border-bottom pb-3 mb-3">
+                    <ul className="nav justify-content-center border-top border-bottom pt-3 pb-3 mb-3">
                         {Object.keys(data).map((key) => {
                             const item = data[key];
                             return (
