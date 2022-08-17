@@ -32,7 +32,6 @@ export default function App() {
         <div className="row">
           <div className="col-sm-5">
             <p className="lead">Keyword List:</p>
-            permutes:
             <RenderResult list={keywords} />
           </div>
           <div className="col">
