@@ -1,35 +1,6 @@
 import * as React from "react";
+import Footer from "./Footer";
 import "./styles.css";
-
-function Combos(list, n = 0, result = [], current = []) {
-  if (n === list.length) {
-    result.push(current);
-  } else {
-    list[n].forEach((item) => Combos(list, n + 1, result, [...current, item]));
-  }
-
-  return result;
-}
-
-function permutator(inputArr) {
-  const result = [];
-
-  const permute = (arr, m = []) => {
-    if (arr.length === 0) {
-      result.push(m);
-    } else {
-      for (let i = 0; i < arr.length; i++) {
-        let curr = arr.slice();
-        let next = curr.splice(i, 1);
-        permute(curr.slice(), m.concat(next));
-      }
-    }
-  };
-
-  permute(inputArr);
-
-  return result;
-}
 
 export default function App() {
   const [modifiers, update] = React.useState([
@@ -70,6 +41,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
@@ -179,4 +151,35 @@ function RenderResult({ list }) {
       />
     </>
   );
+}
+
+
+function Combos(list, n = 0, result = [], current = []) {
+  if (n === list.length) {
+    result.push(current);
+  } else {
+    list[n].forEach((item) => Combos(list, n + 1, result, [...current, item]));
+  }
+
+  return result;
+}
+
+function permutator(inputArr) {
+  const result = [];
+
+  const permute = (arr, m = []) => {
+    if (arr.length === 0) {
+      result.push(m);
+    } else {
+      for (let i = 0; i < arr.length; i++) {
+        let curr = arr.slice();
+        let next = curr.splice(i, 1);
+        permute(curr.slice(), m.concat(next));
+      }
+    }
+  };
+
+  permute(inputArr);
+
+  return result;
 }

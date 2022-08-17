@@ -2,3 +2,4 @@ node_modulesbuild/
 node_modules/
 build
 build/
+.idea/*
