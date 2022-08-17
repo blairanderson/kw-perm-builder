@@ -7,20 +7,20 @@ export default function Footer() {
         "Amazon Vendor Seller Migration Consultant"
     );
 
-    const getTools = async () => {
-        try {
-            const response = await fetch("https://app.shipmentbot.com/tools.json", {mode: "no-cors"});
-            const json = await response.json();
+    const getTools = () => {
+        fetch("https://app.shipmentbot.com/tools.json", {
+            "Origin": "https://app.shipmentbot.com",
+            "mode": "no-cors"
+        }).then((response) => {
+            return response.json();
+        }).then((json) => {
             const {tools, anchor} = json;
             setData(tools);
-            if (anchor){
+            if (anchor) {
                 setAnchor(anchor);
             }
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setLoading(false);
-        }
+        }).catch(error => console.error(error))
+            .finally(() => setLoading(false))
     };
 
     React.useEffect(() => {
